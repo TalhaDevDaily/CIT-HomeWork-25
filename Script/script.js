@@ -19,11 +19,14 @@ searchBtn.addEventListener("click", () => {
     return item === searchKeyword.value;
   });
 
-  if (searchItem.length === 0) searchResult.innerHTML = `Product not Found!`;
+  if (searchItem.length === 0)
+    searchResult.innerHTML = `Item not Found with the words "${searchKeyword.value}"!`;
   else {
     searchItem.map((searchMap) => {
       searchResult.innerHTML = "";
       searchResult.innerHTML += searchMap + "<br />";
+      searchKeyword.value = "";
+      console.log(searchMap);
     });
   }
 });
